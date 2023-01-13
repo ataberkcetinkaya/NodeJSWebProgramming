@@ -8,6 +8,7 @@ const userRoutes = require('./routes/user');
 const path = require('path');
 
 app.use(bodyParser.urlencoded({extended: false}));
+app.use(express.static(path.join(__dirname, 'public'))); //will use the public folder to extract the css and other files inside
 
 //routes
 app.use('/admin', adminRoutes); //will use the adminRoutes and /admin is the starting point => localhost:3000/admin/add-product
